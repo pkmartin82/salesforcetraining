@@ -1,0 +1,38 @@
+<apex:page standardController="Invoice__c" recordSetVar="invoice" 
+           extensions="InvoicesController">
+	<apex:sectionHeader title="Update All Invoices" subtitle="{!opp.Name}" />
+	<apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!cancel}" value="Cancel" />
+            <apex:commandButton action="{!updateMulti}" value="Update" />
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection >
+            <apex:pageBlockTable value="{!existingInvoices}" var="i">
+				<apex:column value="{!i.Name}" />
+                
+                <apex:column >
+                    <apex:facet name="header">{!$ObjectType.Invoice__c.fields.Opportunity__c.Label}</apex:facet>
+                    <apex:inputField value="{!i.Opportunity__c}" />
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">{!$ObjectType.Invoice__c.fields.Due_Date__c.Label}</apex:facet>
+                    <apex:inputField value="{!i.Due_Date__c}" />
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">{!$ObjectType.Invoice__c.fields.Amount__c.Label}</apex:facet>
+                    <apex:inputField value="{!i.Amount__c}" />
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">{!$ObjectType.Invoice__c.fields.Amount_Paid__c.Label}</apex:facet>
+                    <apex:inputField value="{!i.Amount_Paid__c}" />
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">{!$ObjectType.Invoice__c.fields.Balance__c.Label}</apex:facet>
+                    <apex:inputField value="{!i.Balance__c}" />
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

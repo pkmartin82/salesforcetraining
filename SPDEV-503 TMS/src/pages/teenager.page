@@ -1,0 +1,12 @@
+<apex:page >
+    <apex:sectionHeader title="Teenage Texting" />
+    <apex:pageBlock >
+        <apex:pageBlockSection title="Teenager Detail">
+            <apex:outputText value="Hello {!$User.FirstName}" />
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Driving Record">
+            <apex:outputText value="Hello {!$User.FirstName}" />
+        </apex:pageBlockSection>
+
+    </apex:pageBlock>
+</apex:page>

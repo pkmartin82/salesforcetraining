@@ -1,0 +1,4 @@
+<apex:page standardController="Account">
+    Hi {!$User.FirstName}, this is the new, slightly less functional Account Detail page
+    <apex:detail subject="{!Account.Id}" inlineEdit="true" showChatter="true"/>
+</apex:page>

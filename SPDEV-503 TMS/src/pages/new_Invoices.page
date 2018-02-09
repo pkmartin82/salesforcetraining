@@ -1,0 +1,26 @@
+<apex:page standardController="Invoice__c" recordSetVar="invoice" 
+           extensions="InvoicesController">
+	<apex:sectionHeader title="Create Multiple Invoices" subtitle="{!opp.Name}" />
+	<apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!cancel}" value="Cancel" />
+            <apex:commandButton action="{!cancelAll}" immediate="true" value="Cancel All" />
+            <apex:commandButton action="{!saveMulti}" value="Save" />
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection >
+            <apex:pageBlockTable value="{!invoices}" var="i">
+				<apex:column value="{!i.Name}" />
+                <apex:column >
+                    <apex:facet name="header">{!$ObjectType.Invoice__c.fields.Due_Date__c.Label}</apex:facet>
+                    <apex:inputField value="{!i.Due_Date__c}" />
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">{!$ObjectType.Invoice__c.fields.Amount__c.Label}</apex:facet>
+                    <apex:inputText value="{!i.Amount__c}" />
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

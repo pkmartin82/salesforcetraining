@@ -1,0 +1,3 @@
+<apex:page tabStyle="Invoice__c">
+    <apex:enhancedList height="800" width="600" rowsPerPage="50" type="Invoice__c"/>
+</apex:page>
